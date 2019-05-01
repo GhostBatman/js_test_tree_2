@@ -1,8 +1,11 @@
 let trunk = {
-  listItem1: 1,
+  listItem1: {
+    subList: 1
+  },
   subList: {
     subSubList: {
       subSubListItem1: 1,
+      subSubListItem4: 1,
       subSubListItem3: 1,
       subSubListItem2: 'green'
     },
@@ -32,7 +35,7 @@ function createTree (obj, val) {
 function render (branch, el) {
   branch.forEach(function (item) {
     let newEl = document.createElement('div')
-    newEl.innerHTML = item.name
+    newEl.innerHTML = `<span>${ item.name }</span>`
     el.appendChild(newEl)
     newEl.classList.add('name')
     if (item.hasOwnProperty('arr')) {
@@ -42,4 +45,4 @@ function render (branch, el) {
 }
 
 let tree = createTree(trunk, 1)
-render(tree, document.getElementsByClassName('nest')[0])
+render(tree, document.getElementById('tree'))

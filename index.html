@@ -4,15 +4,35 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <style>
+  #tree {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  #tree > :nth-child(1n) {
+    background-color: aliceblue;
+  }
+  #tree > :nth-child(2n) {
+    background-color: antiquewhite;
+  }
+
   .name {
-    padding-top: 10px;
-    padding-left: 20px;
+    display: flex;
+    padding: 10px;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .name > span {
+    width: 100%;
+    text-align: center;
   }
   </style>
 </head>
 <body>
-<div class="tree">
-  <div class="nest"></div>
+<div id="tree">
 </div>
 <script type="text/javascript" src="index.js"></script>
 </body>
